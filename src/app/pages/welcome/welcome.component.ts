@@ -1,17 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-welcome',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss'
 })
 export class WelcomeComponent {
-  @Output() start = new EventEmitter<void>();
+  constructor(private router: Router) {}
 
   begin() {
-    this.start.emit();
+    this.router.navigate(['/home']);
   }
 }

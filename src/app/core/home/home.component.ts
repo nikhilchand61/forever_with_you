@@ -11,26 +11,16 @@ import { WelcomeComponent } from '../../pages/welcome/welcome.component';
   standalone: true,
   imports: [
     CommonModule,
-    WelcomeComponent,
     DayComponent,
     LockedComponent,
     BirthdayComponent
-  ],
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   today = new Date();
   days = VALENTINE_DAYS;
-  
-  hasStarted(): boolean {
-    return localStorage.getItem('started') === 'true';
-  }
-
-  startJourney() {
-    localStorage.setItem('started', 'true');
-    
-  }
 
   isUnlocked(date: string): boolean {
     return new Date(date) <= this.today;
