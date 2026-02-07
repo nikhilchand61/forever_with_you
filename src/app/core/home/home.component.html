@@ -1,0 +1,22 @@
+<!-- WELCOME PAGE -->
+<app-welcome
+  *ngIf="!hasStarted()"
+  (start)="startJourney()">
+</app-welcome>
+
+<!-- MAIN STORY -->
+<div *ngIf="hasStarted()">
+  <div *ngFor="let day of days">
+    <app-day
+      *ngIf="isUnlocked(day.date)"
+      [data]="day">
+    </app-day>
+
+    <app-locked
+      *ngIf="!isUnlocked(day.date)"
+      [date]="day.date">
+    </app-locked>
+  </div>
+
+  <app-birthday *ngIf="isBirthdayUnlocked()"></app-birthday>
+</div>

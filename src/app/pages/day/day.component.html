@@ -1,0 +1,27 @@
+<div class="day-container" [ngClass]="data.theme">
+  <div class="emoji">🌹</div>
+
+  <h1>{{ data.title }}</h1>
+
+  <p class="message">
+    A rose for you,<br />
+    because my love for you<br />
+    grows every single day ❤️
+  </p>
+  <p class="message">
+      This is just the beginning of our forever journey together.<br />
+      I can't wait to create more beautiful memories with you! 🌹 <br>
+      Happy Rose Day, my love! 🌹 <br>
+      I love you more than words can express, and I'm so grateful to have you in my life. <br>
+      Here's to many more days of love and happiness together! 🌹 <br>
+  </p>
+  <audio #bgMusic preload="auto" loop>
+    <source src="assets/music/rose-day.mp3" type="audio/mpeg" />
+  </audio>
+  <button class="music-btn" [class.playing]="isPlaying" (click)="playMusic()">
+    {{ isPlaying ? "🎶 Music Playing" : "🎵 Play Music" }}
+  </button>
+  <p class="message">
+      Come back tomorrow and scroll little further for another special day! 🌹 <br>
+  </p>
+</div>
